@@ -72,6 +72,9 @@ function getSheet(pageIndex = 1) {
       document.getElementById('waiting').style.display = 'none';
       document.getElementById('error').style.display = 'inline';
     });
+  }else{
+    document.getElementById('waiting').style.display = 'none';
+    document.getElementById('error').style.display = 'inline';
   }
 }
 
