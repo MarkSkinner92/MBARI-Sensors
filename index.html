@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+  <title>MBARI Sensors</title>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
@@ -20,6 +21,12 @@ body {
 .title{
   text-align: center;
 }
+.graphTitle{
+  text-align: center;
+  color: wheat;
+  margin: 20px 0px 0px 10px;
+  display: none;
+}
 h1,h2,p{
   color:#FFF
 }
@@ -30,19 +37,25 @@ h1,h2,p{
 <!-- <input onchange="getSheet(this.value);"> -->
 <input style='margin-bottom:10px;margin-left:10px' onchange="dateChangeCallback(this.value)"type='date' id='date'></input>
 </input>
-<p style='display:inline' >View the google sheet directly <a target="_blank" id='sheetlink'>here</a></p>
+<p style='display:inline; margin-left:10px' >View the google sheet directly <a target="_blank" id='sheetlink'>here</a></p>
 <div id='waiting'>
-   <h2 class='title'>waiting on docs.google.com/spreadsheets...</h2>
+   <h2 class='title'>Waiting for docs.google.com/spreadsheets...</h2>
    <img style='position:relative;left:calc(50% - 160px)' src="loading.gif"/>
  </div>
  <div style='display:none' id='error'>
     <h2 class='title'>The page you are looking for does not exist</h2>
 </div>
+<h3 class='graphTitle'>ROV</h3>
 <div id='ROVgraph'></div>
+<h3 class='graphTitle'>Lights</h3>
 <div id='Lightsgraph'></div>
+<h3 class='graphTitle'>Hydrophone</h3>
 <div id='Hydrophone'></div>
+<h3 class='graphTitle'>Camera</h3>
 <div id='Camera'></div>
+<h3 class='graphTitle'>Atmosphere</h3>
 <div id='Atmosphere'></div>
+<h3 class='graphTitle'>Fans</h3>
 <div id='Fan'></div>
 </body>
 </html>
