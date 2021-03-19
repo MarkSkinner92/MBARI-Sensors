@@ -26,8 +26,15 @@ $(document).ready( function() {
 
 var layout = {
   height:400,
+  plot_bgcolor:"#121212",
+  paper_bgcolor:"#1d1d1d",
   yaxis: {
     fixedrange: true
+  },
+  font: {
+    family: 'Poppins',
+    size: 13,
+    color: '#AAA'
   },
   margin: {
     l: 50,
@@ -59,7 +66,10 @@ function doData(json) {
 }
 
 function getSheet(pageIndex = 1) {
-  if(pageIndex < 1) pageIndex = 1;
+  if(pageIndex < 1){
+    document.getElementById('waiting').style.display = 'none';
+    document.getElementById('error').style.display = 'inline';
+  }
   if(pageIndex <= 35){ //limit to 35 pages of history
     $.getScript(`https://spreadsheets.google.com/feeds/cells/${sheetID}/${pageIndex}/public/values?alt=json-in-script&callback=doData`)
     .done(function( script, textStatus ) {

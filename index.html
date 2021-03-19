@@ -6,24 +6,38 @@
 <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 <script type="text/javascript" src="main.js"></script>
 <style>
+@font-face {
+  font-family: 'Poppins';
+  src: URL('Poppins-Light.ttf') format('truetype');
+}
+body {
+  margin: 0px;
+  font-family: 'Poppins',sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background:#121212;
+}
 .title{
   text-align: center;
+}
+h1,h2,p{
+  color:#FFF
 }
 </style>
 </head>
 <body>
-<h1 class='title'>MBARI Sensors</h1>
+<h1 class='title' style="color:#FFF">MBARI Sensors</h1>
 <!-- <input onchange="getSheet(this.value);"> -->
-<input onchange="dateChangeCallback(this.value)"type='date' id='date'></input>
+<input style='margin-bottom:10px;margin-left:10px' onchange="dateChangeCallback(this.value)"type='date' id='date'></input>
 </input>
 <p style='display:inline' >View the google sheet directly <a target="_blank" id='sheetlink'>here</a></p>
 <div id='waiting'>
    <h2 class='title'>waiting on docs.google.com/spreadsheets...</h2>
-   <img style='position:relative;left:calc(50% - 128px)' src="loading.gif"/>
+   <img style='position:relative;left:calc(50% - 160px)' src="loading.gif"/>
  </div>
  <div style='display:none' id='error'>
     <h2 class='title'>The page you are looking for does not exist</h2>
-  </div>
+</div>
 <div id='ROVgraph'></div>
 <div id='Lightsgraph'></div>
 <div id='Hydrophone'></div>
