@@ -39,7 +39,7 @@ function initClient() {
     // Handle the initial sign-in state.
     updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
   }, function(error) {
-    appendPre(JSON.stringify(error, null, 2));
+    console.log('error:',error);
   });
 }
 
